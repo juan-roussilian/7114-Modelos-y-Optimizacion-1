@@ -1,15 +1,21 @@
 clothes_file = open("primer_problema.txt")
-laundry_file = open("resultado.txt","x")
+laundry_file = open("resultado.txt","w")
+incompatibilities = {}
+clothes = []
 
+# Read all lines from file and add them to either incompatibilities dict or clothes list.
 for line in clothes_file:
-    if "primer caracter es e ":
-        #Agrego incompatibilidad al hashmap
-    elif "primer caracter es n":
-        #Agrego prenda a lista de prendas
+    chars = line.split()
+    if chars[0] == "e":
+        if chars[1] in incompatibilities:
+            incompatibilities[chars[1]].append(chars[2])
+        else:
+            incompatibilities[chars[1]] = [chars[2]]
 
-#creo lista de listas de prendas
+    elif chars[0] == "n":
+        clothes.append([chars[1], chars[2]])
 
-for prenda in prendas:
+#for prenda in prendas:
     # verifico que no tenga incompatibilidades con las prendas de la listas
     #     si tiene, creo su propia lista
     #     si no, la agrego a una lista
