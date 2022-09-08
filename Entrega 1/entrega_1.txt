@@ -1,0 +1,11 @@
+- Impresión del problema: El problema parece complejo pero con la ayuda de el algoritmo a fabricar se simplifica bastante.
+ 
+- Ideas para la resolucion: Se opto por un algoritmo "greedy", el cual buscara una prenda, y tratara de posicionarla en el primer lavado compatible que pueda,
+sin tener en cuenta que se podrian agrupar las prendas por tiempo de lavado ademas de por su compatibilidad ya que no encontré una manera de incorporar esta lógica
+al algoritmo.
+
+- Comentarios sobre los cambios que hagan en el código: Se intento mejorar el algoritmo ordenando las prendas según si tiempo de lavado, para que el loop que las ordena en distintos
+lavados las priorice por las que demoran mas, sin embargo esto no dió resultado ya que obtuvimos un resultado final donde habia lavados con prendas incompatibles entre sí.
+
+- Comentarios finales de la entrega: Si bien se podría haber tenido en cuenta los tiempos de lavados a la hora de agrupar prendas para minimizar, además del numero de lavados, 
+el tiempo que demoraba cada uno, se me ocurrió una manera programatica de hacerlo.
