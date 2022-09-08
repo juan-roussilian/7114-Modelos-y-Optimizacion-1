@@ -4,6 +4,10 @@ def is_incompatible(a_cloth, another_cloth):
     else:
         return False
 
+def write_washing_in_file(file, washing_elements, washing_n):
+    for cloth in washing_elements:
+        file.write(f"{cloth} {washing_n}\n")
+
 clothes_file = open("primer_problema.txt")
 laundry_file = open("resultado.txt","w")
 incompatibilities = {}
@@ -37,8 +41,8 @@ for cloth in clothes:
     # If no compatible washes are found,create a new one with the incompatible cloth
     if(incompatible_with_all):
         washes.append([cloth[0]])
+wash_counter = 1
 
-
-
-    # Salgo ordenadamente
-
+for washing in washes:
+    write_washing_in_file(laundry_file, washing, wash_counter)
+    wash_counter += 1
