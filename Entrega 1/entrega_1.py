@@ -26,18 +26,24 @@ for line in clothes_file:
         clothes.append([chars[1], chars[2]])
 
 washes = []
+print(clothes)
 for cloth in clothes:
     incompatible_with_all = True
     for wash in washes:
-        incompatible_with_wash = True
+        incompatible_with_wash = False
+        counter = 0
         # Check against all clothes in current wash if is incompatible
-        for washed_cloth in wash:
-            incompatible_with_wash =  is_incompatible(cloth[0], washed_cloth)
-
+        while(not incompatible_with_wash and counter < len(wash)):
+            print(f"llamando a funcion de incompatibilidad con prendas {cloth[0]}, {wash[counter]}")
+            incompatible_with_wash =  is_incompatible(cloth[0], wash[counter])
+            print(f"dio como valor incompatible: {incompatible_with_wash}")
+            counter += 1
+        
         if(not incompatible_with_wash):
             wash.append(cloth[0])
             incompatible_with_all = False
             break
+
     # If no compatible washes are found,create a new one with the incompatible cloth
     if(incompatible_with_all):
         washes.append([cloth[0]])
