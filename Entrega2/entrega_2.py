@@ -1,8 +1,8 @@
 def is_incompatible(a_cloth, another_cloth):
     incompatible = False
-    if (a_cloth in incompatibilities[another_cloth]):
+    if (another_cloth in incompatibilities and a_cloth in incompatibilities[another_cloth]):
         incompatible = True
-    if (another_cloth in incompatibilities[a_cloth]):
+    if (a_cloth in incompatibilities and another_cloth in incompatibilities[a_cloth]):
         incompatible = True
     return incompatible
 
