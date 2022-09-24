@@ -1,15 +1,17 @@
 def is_incompatible(a_cloth, another_cloth):
-    if (a_cloth in incompatibilities[another_cloth]) or (another_cloth in incompatibilities[a_cloth]):
-        return True
-    else:
-        return False
+    incompatible = False
+    if (a_cloth in incompatibilities[another_cloth]):
+        incompatible = True
+    if (another_cloth in incompatibilities[a_cloth]):
+        incompatible = True
+    return incompatible
 
 def write_washing_in_file(file, washing_elements, washing_n):
     for cloth in washing_elements:
         file.write(f"{cloth} {washing_n}\n")
 
-clothes_file = open("primer_problema.txt")
-laundry_file = open("resultado.txt","w")
+clothes_file = open("./segundo_problema.txt")
+laundry_file = open("./resultado.txt","w")
 incompatibilities = {}
 clothes = []
 
@@ -17,8 +19,10 @@ clothes = []
 for line in clothes_file:
     chars = line.split()
     if chars[0] == "e":
+        #If the cloth No. already has a list of incopatible clothes, append the new one to it.
         if chars[1] in incompatibilities:
             incompatibilities[chars[1]].append(chars[2])
+        #If it does not have any incoptaibility created yet, add a list with the current cloth to the dictonary on its key.
         else:
             incompatibilities[chars[1]] = [chars[2]]
 
@@ -26,7 +30,7 @@ for line in clothes_file:
         clothes.append([chars[1], chars[2]])
 
 washes = []
-print(clothes)
+#print(clothes)
 for cloth in clothes:
     incompatible_with_all = True
     for wash in washes:
@@ -34,9 +38,7 @@ for cloth in clothes:
         counter = 0
         # Check against all clothes in current wash if is incompatible
         while(not incompatible_with_wash and counter < len(wash)):
-            print(f"llamando a funcion de incompatibilidad con prendas {cloth[0]}, {wash[counter]}")
             incompatible_with_wash =  is_incompatible(cloth[0], wash[counter])
-            print(f"dio como valor incompatible: {incompatible_with_wash}")
             counter += 1
         
         if(not incompatible_with_wash):
