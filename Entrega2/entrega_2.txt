@@ -1,0 +1,9 @@
+- Impresión del problema: El problema a simple vista parece no sufrir modificaciones significativas, unicamente se expande su dominio exponencialmente
+ 
+- Ideas para la resolucion: Dado que para la primer entrega, el algoritmo greedy planteado obtuvo una puntuacion muy buena, se optó por mantener la estrategia y observar si el 
+resultado nuevamente era bueno.
+
+- Comentarios sobre los cambios que hagan en el código: Para que funcionase sobre el nuevo set de datos, se tuvo que solucionar un bug que se arrastró desde la primer entrega, el cual generaba
+que el algoritmo fallara en caso de que una prenda fuera incompatible, con otra prenda que no tenia incompatibilidades en la lista.
+
+- Comentarios finales de la entrega: El resultado obtenido no fue bueno en cuanto a costos, sin embargo no supe encontrar como mejorar el algoritmo para optimizar un poco mas los costos
