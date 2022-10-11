@@ -1,0 +1,4 @@
+Impresion del problema: Planteandolo con programacion lineal entera, el problema resulta mas sencillo que cuando se intenta resolver con un algoritmo convencional.
+Idea de resolucion: Se resolvera planteando un modelo de particion de conjuntos.
+Cambios del codigo: No hay codigo.
+Comentarios finales: Se opto por no escribir todas y cada una de las restricciones ya que no es recomendado hacerlo durante las practicas de la materia por lo repetitivas que pueden llegar a ser.
