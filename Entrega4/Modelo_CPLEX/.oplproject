@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <configs>
+        		
+        <config default="true" name="ejec" category="opl">
+            			
+            <ref name="Modelo_CPLEX.mod" type="model">
+			</ref>
+            			
+            <ref name="Modelo_CPLEX.ops" type="setting">
+			</ref>
+            			
+            <ref name="Modelo_CPLEX.dat" type="data">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
