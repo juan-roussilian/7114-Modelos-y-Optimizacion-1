@@ -10,16 +10,8 @@ def write_washing_in_file(file, washing_elements, washing_n):
     for cloth in washing_elements:
         file.write(f"{cloth} {washing_n}\n")
 
-def write_node_weight_in_file(file, node, weight):
-        file.write(f"w <{node},{weight}>,\n")
-
-def write_edge_in_file(file, node1, node2):
-        file.write(f"e <{node1},{node2}>,\n")
-
-
 clothes_file = open("./cuarto_problema.txt")
 laundry_file = open("./resultado.txt","w")
-dat_file = open("./datos.txt","w")
 incompatibilities = {}
 clothes = []
 
@@ -27,7 +19,6 @@ clothes = []
 for line in clothes_file:
     chars = line.split()
     if chars[0] == "e":
-        write_edge_in_file(dat_file, chars[1], chars[2])
         #If the cloth No. already has a list of incopatible clothes, append the new one to it.
         if chars[1] in incompatibilities:
             incompatibilities[chars[1]].append(chars[2])
@@ -36,7 +27,6 @@ for line in clothes_file:
             incompatibilities[chars[1]] = [chars[2]]
 
     elif chars[0] == "n":
-        write_node_weight_in_file(dat_file, chars[1], chars[2])
         clothes.append([chars[1], chars[2]])
 
 washes = []
