@@ -3,5 +3,7 @@
 <settings version="2">
   <category name="cplex">
     <setting name="tilim" value="600.0"/>
+    <setting name="dettilim" value="600.0"/>
+    <setting name="solutiontype" value="1"/>
   </category>
 </settings>

@@ -4,7 +4,7 @@
     	
     <configs>
         		
-        <config default="true" name="Configuraci&amp;#243;n 1" category="opl">
+        <config default="true" name="ejec" category="opl">
             			
             <ref name="Modelo_CPLEX.mod" type="model">
 			</ref>
